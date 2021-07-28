@@ -6,16 +6,41 @@ body{
     width: 900px;
     height: 900px;
     margin: auto;
-    background: gray;
-    padding: 10px;
 } 
+
 div{
     display: flex;
-    border: 20px solid blue;
-    border-radius: 25px;
+    flex-direction: column;
     text-align: center;
-    width: fit-content;
-    height: 500px;
+    width: 700px;
+    height: fit-content;
     background-color: white;
     padding: 5px;
+}
+
+td{
+    padding: 8px;
+}
+
+th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: grey;
+    
+}
+
+tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+
+p{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+hr{
+    width: 750px;
+    border: 1px solid black;
 }

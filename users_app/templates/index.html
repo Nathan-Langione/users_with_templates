@@ -9,9 +9,9 @@
     <body>
         <div>
             <h2>All the Users</h2>
-
             <table>
                 <tr>
+                    <th>ID</th>
                     <th>First Name</th>
                     <th>last Name</th>
                     <th>Email</th>
@@ -19,6 +19,7 @@
                 </tr>
                 {% for user in all_users %}
                 <tr>
+                    <td>{{user.id}}</td>
                     <td>{{user.first_name}}</td>
                     <td>{{user.last_name}}</td>
                     <td>{{user.email_address}}</td>
@@ -27,14 +28,19 @@
                 {% endfor %}
             </table>
             </div>  
+            <hr>
             <div>
             <h2>Add a user:</h2>
             <form action="/process" method="post">
                 {% csrf_token %}
-                <p>First name: <input name="first_name" type="text"></p> 
-                <p>Last Name: <input name="last_name" type="text"></p>
-                <p>Email: <input name="email" type="text"></p>
-                <p>Age: <input name="age" type="text"></p>
+                <p>
+                    First name: <input name="first_name" type="text">
+                    Last Name: <input name="last_name" type="text">
+                </p>
+                <p>
+                    Email: <input name="email" type="text">
+                    Age: <input name="age" type="text">
+                </p>
                 <button type="submit">Add</button>
             </form>        
         </div>
