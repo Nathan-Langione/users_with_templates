@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Dojo Survey</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">    
+    </head>
+    <body>
+        <div>
+            <h1>Submitted Info</h1>
+            <p>Name: {{request.session.name}}</p>
+            <p>Dojo Location: {{request.session.location}} </p>
+            <p>Favorite Language: {{request.session.language}}</p>
+            <p>Gender: {{request.session.gender}}</p>
+            <p>Comment: {{request.session.comment}}</p>
+            {% if request.session.email == "True" %}
+                <P>We will send you periodic emails!</P>
+            {% else %}
+                <P>We will not send you periodic emails!</P>
+            {% endif %}
+        </div>  
+
+
+    </body>
+
+

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Dojo Survey</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">    
+    </head>
+    <body>
+        <div>
+            <h2>Please fill and submit the form:</h2>
+            <form action="/process" method="post">
+                {% csrf_token %}
+                <p>Your name: <input name="name" type="text"></p> 
+                <p>Dojo Location: <select name="location">
+                        <option value="boston">Boston</option>
+                        <option value="dc">DC</option>
+                        <option value="seattle">Seattle</option>
+                    </select></p>
+                <p>Favorite language:<select name="language">
+                        <option value="python">Python</option>
+                        <option value="java">Java</option>
+                        <option value="javascript">JavaScript</option>
+                    </select></p>
+                
+                <p>Please select your gender:
+                <br>
+                <input type="radio" id ="male" name="gender" value="Male" checked>
+                <label for="html">Male</label><br>
+                <input type="radio" id = "female" name="gender" value="Female">   
+                <label for="female">Female</label><br>
+                <input type="radio" id="other" name="gender" value="Other">
+                <label for="other">Other</label></p>
+                <p>Comment(optional):<input name="comment" type="text"></p>
+                <input type="checkbox" id="email" name="email" value="True"> 
+                
+                <label for="email"> Would you like to receive periodic emails?</label>
+                <br>
+                <button type="submit">Button</button>
+            </form>        
+        </div>
+    </body>
+
+
